@@ -12,7 +12,7 @@ arialFont.load().then(function (font) {
 });
 
 const baseImage = new Image();
-baseImage.src = "./resultadodehoje.jpg";
+baseImage.src = "./sorteiodehoje.jpg";
 
 
 document.getElementById("btnShare").addEventListener("click", shareImage);
@@ -67,10 +67,8 @@ function saveImage() {
 }
 
 $( "#btnSubmit" ).click(function() {
-  const n1 = $("#number1").val();
-  const n2 = $("#number2").val();
-  const n3 = $("#number3").val();
-  const n4 = $("#number4").val();
+  const n1 = $("#milhar").val();
+  const n2 = $("#centena").val();
   const data = $("#data").val();
   
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -79,29 +77,26 @@ $( "#btnSubmit" ).click(function() {
   context.save();
 
   context.textBaseline = "middle";
-  context.font = "90px arial";
-  context.fillStyle = "#8B0000";
+  context.font = "100px arial";
+  context.fillStyle = "white";
 
-  context.fillText(data, 310, 685);
+  context.fillText(data, 305, 700);
 
   context.textBaseline = "middle";
-  context.font = "160px arial";
-  context.fillStyle = "black";
+  context.font = "80px arial";
+  context.fillStyle = "white";
  
-  context.fillText(n1, 282, 825);
-  context.fillText(n2, 420, 825);
-  context.fillText(n3, 558, 825);
-  context.fillText(n4, 696, 825);
+  context.fillText(n1, 75, 943);
+  context.fillText(n2, 620, 943);
+  
   context.restore();
 
 });
 
 $( "#btnClear" ).click(function() {
   // const n1 = $( "#number1" ).val();
-  $("#number1").val('');
-  $("#number2").val('');
-  $("#number3").val('');
-  $("#number4").val('');
+  $("#milhar").val('');
+  $("#centena").val('');
   $("#data").val('');
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(baseImage, 0, 0);
